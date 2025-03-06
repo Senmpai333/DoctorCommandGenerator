@@ -25,12 +25,11 @@ const commands = {
 function selectCommandType(type) {
     // Скрываем основные кнопки
     const mainButtons = document.getElementById("mainButtons");
-    mainButtons.classList.remove("show");
     mainButtons.style.opacity = "0";
     setTimeout(() => {
         mainButtons.style.display = "none";
 
-        // Показываем новые кнопки
+        // Показываем все команды как кнопки
         const subButtons = document.getElementById("subButtons");
         subButtons.innerHTML = ""; // Очищаем предыдущие кнопки
         commands[type].forEach(cmd => {
@@ -47,17 +46,21 @@ function selectCommandType(type) {
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         const result = document.getElementById("result");
-        result.innerText = "Команда скопирована: " + text;
-        // Скрываем новые кнопки и показываем основные
-        const subButtons = document.getElementById("subButtons");
-        subButtons.classList.remove("show");
-        subButtons.style.opacity = "0";
+        result.style.display = "block";
+        result.innerText = "Команда скопирована!";
         setTimeout(() => {
-            subButtons.style.display = "none";
-            const mainButtons = document.getElementById("mainButtons");
-            mainButtons.style.display = "block";
-            setTimeout(() => mainButtons.classList.add("show"), 10); // Плавное появление
-        }, 500);
+            result.style.display = "none";
+            // Возвращаем основные кнопки
+            const subButtons = document.getElementById("subButtons");
+            subButtons.classList.remove("show");
+            subButtons.style.opacity = "0";
+            setTimeout(() => {
+                subButtons.style.display = "none";
+                const mainButtons = document.getElementById("mainButtons");
+                mainButtons.style.display = "block";
+                setTimeout(() => mainButtons.style.opacity = "1", 10); // Плавное появление
+            }, 500);
+        }, 1000); // Уведомление на 1 секунду
     }).catch(err => {
         console.error("Ошибка копирования: ", err);
     });
