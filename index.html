@@ -7,12 +7,13 @@
 </head>
 <body>
     <h1>Генератор команд для врача</h1>
-    <div class="buttons">
-        <button onclick="generateCommand('g try')">Сгенерировать /g try</button>
-        <button onclick="generateCommand('g do')">Сгенерировать /g do</button>
-        <button onclick="generateCommand('me')">Сгенерировать /me</button>
+    <div class="buttons" id="mainButtons">
+        <button onclick="selectCommandType('g try')">Сгенерировать /g try</button>
+        <button onclick="selectCommandType('g do')">Сгенерировать /g do</button>
+        <button onclick="selectCommandType('me')">Сгенерировать /me</button>
     </div>
-    <p id="result">Нажми кнопку, чтобы получить команду!</p>
+    <div class="buttons" id="subButtons" style="display: none;"></div>
+    <p id="result">Нажми кнопку, чтобы выбрать команду!</p>
     <script src="script.js"></script>
 </body>
 </html>
