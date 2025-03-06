@@ -17,9 +17,18 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 button:hover {
     background-color: #2980b9;
+}
+#subButtons button {
+    opacity: 0;
+    display: inline-block;
+    transition: opacity 0.5s ease;
+}
+#subButtons.show button {
+    opacity: 1;
 }
 #result {
     font-weight: bold;
