@@ -7,9 +7,12 @@
 </head>
 <body>
     <h1>Генератор команд для врача</h1>
-    <input type="text" id="action" placeholder="Что хочешь сделать?">
-    <button onclick="generateCommand()">Сгенерировать</button>
-    <p id="result">Тут будет команда</p>
+    <div class="buttons">
+        <button onclick="generateCommand('g try')">Сгенерировать /g try</button>
+        <button onclick="generateCommand('g do')">Сгенерировать /g do</button>
+        <button onclick="generateCommand('me')">Сгенерировать /me</button>
+    </div>
+    <p id="result">Нажми кнопку, чтобы получить команду!</p>
     <script src="script.js"></script>
 </body>
 </html>
