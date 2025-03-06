@@ -11,7 +11,7 @@ h1 {
     margin: 20px;
 }
 button {
-    margin: 10px;
+    margin: 5px;
     padding: 10px 20px;
     background-color: #3498db;
     color: white;
@@ -22,16 +22,16 @@ button {
 button:hover {
     background-color: #2980b9;
 }
-#subButtons button {
+#subButtons {
     opacity: 0;
-    display: inline-block;
     transition: opacity 0.5s ease;
 }
-#subButtons.show button {
+#subButtons.show {
     opacity: 1;
 }
 #result {
     font-weight: bold;
-    color: #e74c3c;
+    color: #27ae60;
     margin-top: 20px;
+    display: none;
 }
